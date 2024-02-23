@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Gudea:ital,wght@0,400;0,700;1,400&display=swap');
+body{
+    filter: grayscale(100%);
+    font-family: 'Gudea', sans-serif;
+    font-weight: 400;
+}
+.preloader{
+    width: 100%;
+    height: 100svh;
+}
+.preloader-container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.preloader-text{
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1rem;
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+}

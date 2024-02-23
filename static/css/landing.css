@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Akronim&family=Gudea:ital,wght@0,400;0,700;1,400&display=swap');
+*{
+    transition: all 0.1s ease-in;
+}
+@keyframes flicker {
+    0% {
+        background-position: 0 0;
+    }
+    25% {
+        background-position: 0 100%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    75% {
+        background-position: 100% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+body{
+    font-family: 'Gudea', sans-serif;
+    box-sizing: border-box;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+body::before {
+    inset: -200%;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    background: url('https://framerusercontent.com/images/rR6HYXBrMmX4cRpXfXUOvpvpB0.png') repeat;
+    opacity: 0.1;
+    z-index: 999;
+    animation: flicker 0.2s ease-in infinite;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    z-index: 1000;
+    margin: auto auto;
+    height: 10vh;
+}
+.navbar{
+    background-color: white;
+    display: block;
+    width: 360px;
+    border: 2px solid rgb(44, 59, 56);
+    border-radius: 40px;
+    box-shadow: -4px 4px 0px 0px rgb(44, 59, 56);
+    margin: auto auto;
+    font-weight: 700;
+    font-size: 30px;
+    color: rgb(44, 59, 56);
+    padding: 16px 16px 16px 32px;
+    font-family: "Akronim", system-ui;
+}
+.navbar a{
+    text-decoration: none;
+    color: rgb(44, 59, 56);
+}
+.navbar a:hover, a:active, a:visited, a:link, a:focus, a:target{
+    color: rgb(44, 59, 56);
+}
+.navbar button{
+    display: inline;
+    background-color: rgb(44, 59, 56);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    padding: 8px 16px;
+    font-size: 15px;
+    font-weight: 400;
+    float: right;
+    margin: 0px 16px;
+    cursor: pointer;
+    width: min-content;
+    font-family: "Akronim", system-ui;
+}
+.menus{
+    display: none;
+    margin-top: 32px;
+    font-size: 15px;
+    font-family: 'Gudea', sans-serif;
+    font-weight: 700;
+}
+.menus a{
+    text-decoration: none;
+    color: rgb(44, 59, 56);
+    display: block;
+    padding: 4px 0;
+}
+.left-img, .right-img{
+    display: block;
+}
+.last-a:active, .last-a:visited, .last-a:link, .last-a:focus, .last-a:hover{
+    color: white;
+}
+.last-a {
+    font-size: 24px;
+    border: 2px solid rgb(44, 59, 56);
+    background-color: rgb(44, 59, 56);
+    border-radius: 5px;
+    color: white;
+    width: 30%;
+    text-align: center;
+    padding: 8px 16px;
+    font-family: 'Akronim', sans-serif;
+    text-decoration: none;
+    background-image: linear-gradient(to right, rgb(44, 59, 56) 0%, rgb(44, 59, 56) 50%, white 50%, white 100%);
+    background-size: 200% 100%;
+    transition: background-position 0.5s;
+}
+
+.last-a:hover {
+    background-position: -100% 0;
+}
+@media screen and (max-width: 660px){
+    .navbar{
+        max-width: 320px;
+        display: block;
+    }
+    .left-img, .right-img{
+        display: none;
+    }
+}
